@@ -162,10 +162,13 @@ p {
 	font-weight:200;
 	line-height:1.5em;
 	margin:0.6em 0;
-}
-
-a {
-	color: inherit;
+	
+	a {
+		color: inherit;
+	}
+	a:hover {
+		color: $orange;
+	}
 }
 
 hr {

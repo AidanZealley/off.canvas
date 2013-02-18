@@ -1,0 +1,271 @@
+/* Compass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* Colours */
+/*e1605a*/
+/* Responsive break points */
+/*1200px*/
+/*1000px*/
+/*600px*/
+/*530px*/
+/*450px*/
+/*400px*/
+/*320px*/
+/* border-radius */
+html {
+  float: left;
+  width: 100%;
+  height: 100%;
+  font-size: 100%; }
+
+body {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+/*JS applies .scrolling to body too, to prevent extra scrollbar in IE*/
+body.scrolling {
+  overflow: hidden; }
+
+.animated {
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  -ms-transition-property: -ms-transform;
+  -ms-transition-duration: 0.3s;
+  -ms-transition-timing-function: ease-in-out;
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-property: -o-transform;
+  -o-transition-duration: 0.3s;
+  -o-transition-timing-function: ease-in-out; }
+
+.floated {
+  float: left;
+  width: 100%; }
+
+.padded {
+  padding: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.paddedLight {
+  padding: 1.2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.window {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #333;
+  float: left;
+  width: 100%; }
+
+.window.scrolling {
+  overflow: hidden; }
+
+.scrollable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.overthrow-enabled .overthrow {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20em;
+  word-wrap: break-word;
+  float: left; }
+  @media screen and (max-width: 28.125em) {
+    .side {
+      width: 15em; } }
+  .side .slide {
+    display: none; }
+
+.side.scrolling {
+  bottom: 0;
+  transform: translate3d(-7em, 0, 0);
+  -ms-transform: translate3d(-7em, 0, 0);
+  -moz-transform: translate3d(-7em, 0, 0);
+  -webkit-transform: translate3d(-7em, 0, 0);
+  -o-transform: translate3d(-7em, 0, 0); }
+  .side.scrolling .slide {
+    display: block; }
+  .side.scrolling .slide:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    width: 1.6em;
+    height: 1.6em;
+    font-size: 2.5em;
+    line-height: 1.6em;
+    color: gainsboro;
+    text-decoration: none;
+    text-align: center;
+    opacity: 0.3; }
+    @media screen and (max-width: 37.5em) {
+      .side.scrolling .slide:first-child {
+        font-size: 2.25em; } }
+    @media screen and (max-width: 28.125em) {
+      .side.scrolling .slide:first-child {
+        font-size: 2em; } }
+    @media screen and (max-width: 25em) {
+      .side.scrolling .slide:first-child {
+        font-size: 1.75em; } }
+  .side.scrolling .slide:first-child:hover {
+    opacity: 0.5; }
+
+.no-csstransforms3d .side.scrolling {
+  left: -7em; }
+
+.side.slid {
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0); }
+
+.no-csstransforms3d .side.slid {
+  left: 0; }
+
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20em;
+  word-wrap: break-word;
+  float: left; }
+  .page .scrollable {
+    top: 3em;
+    padding-bottom: 3em; }
+  @media screen and (max-width: 37.5em) {
+    .page .scrollable {
+      font-size: 90%; } }
+  @media screen and (max-width: 28.125em) {
+    .page .scrollable {
+      font-size: 80%; } }
+  @media screen and (max-width: 25em) {
+    .page .scrollable {
+      font-size: 70%; } }
+
+.page.scrolling {
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0); }
+
+.no-csstransforms3d .page.scrolling {
+  left: 0; }
+
+.page.slid {
+  transform: translate3d(20em, 0, 0);
+  -ms-transform: translate3d(20em, 0, 0);
+  -moz-transform: translate3d(20em, 0, 0);
+  -webkit-transform: translate3d(20em, 0, 0);
+  -o-transform: translate3d(20em, 0, 0); }
+  @media screen and (max-width: 28.125em) {
+    .page.slid {
+      transform: translate3d(15em, 0, 0);
+      -ms-transform: translate3d(15em, 0, 0);
+      -moz-transform: translate3d(15em, 0, 0);
+      -webkit-transform: translate3d(15em, 0, 0);
+      -o-transform: translate3d(15em, 0, 0); } }
+
+.no-csstransforms3d .page.slid {
+  left: 20em; }
+  @media screen and (max-width: 28.125em) {
+    .no-csstransforms3d .page.slid {
+      left: 15em; } }
+
+.topBar {
+  position: relative;
+  height: 3em;
+  width: 100%;
+  z-index: 200;
+  word-wrap: break-word;
+  overflow: hidden; }
+  @media screen and (max-width: 37.5em) {
+    .topBar {
+      font-size: 90%; } }
+  @media screen and (max-width: 28.125em) {
+    .topBar {
+      font-size: 80%; } }
+  @media screen and (max-width: 25em) {
+    .topBar {
+      font-size: 70%; } }
+
+.bottomBar {
+  position: absolute;
+  bottom: 0;
+  height: 3em;
+  width: 100%;
+  z-index: 100; }

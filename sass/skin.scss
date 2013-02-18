@@ -1,0 +1,497 @@
+/* Compass */
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/css3/images";
+@import "compass/css3/box-sizing";
+
+/* Colours */
+$lightestGrey:#f7f7f7;
+$lightGrey:#dcdcdc;
+$mediumGrey:#999;
+$darkGrey:#272727;
+$red:#ec6250;/*e1605a*/
+$darkGreen:#5a6e6c;
+$blue:#3f7083;
+$orange:#e05000;
+$darkOrange:#702c07;
+
+/* Responsive break points */
+$largestBreak:75em;/*1200px*/
+$largeBreak:62.5em;/*1000px*/
+$mediumLargeBreak:37.5em;/*600px*/
+$mediumBreak:33.125em;/*530px*/
+$smallMediumBreak:28.125em;/*450px*/
+$smallBreak:25em;/*400px*/
+$smallestBreak:20em;/*320px*/
+
+/* border-radius */
+
+$threePixels:0.1875em;
+$sixPixels:0.375em;
+
+@font-face {
+    font-family: Entypo;
+    src: url('../fonts/entypo.eot');
+    src: url('../fonts/entypo.woff') format('woff'),
+         url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/entypo.ttf') format('truetype'),
+         url('../fonts/entypo.svg#Entypo') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: Pacifico;
+    src: url('../fonts/Pacifico-webfont.eot');
+    src: url('../fonts/Pacifico-webfont.woff') format('woff'),
+         url('../fonts/Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Pacifico-webfont.ttf') format('truetype'),
+         url('../fonts/Pacifico-webfont.svg#Entypo') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url('../fonts/Lato-Hai-webfont.eot');
+    src: url('../fonts/Lato-Hai-webfont.woff') format('woff'),
+         url('../fonts/Lato-Hai-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato-Hai-webfont.ttf') format('truetype'),
+         url('../fonts/Lato-Hai-webfont.svg#Entypo') format('svg');
+    font-weight:100;
+    font-style:normal;
+}
+@font-face {
+    font-family: Lato;
+    src: url('../fonts/Lato-Lig-webfont.eot');
+    src: url('../fonts/Lato-Lig-webfont.woff') format('woff'),
+         url('../fonts/Lato-Lig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato-Lig-webfont.ttf') format('truetype'),
+         url('../fonts/Lato-Lig-webfont.svg#Entypo') format('svg');
+    font-weight:200;
+    font-style:normal;
+}
+@font-face {
+    font-family: Lato;
+    src: url('../fonts/Lato-Reg-webfont.eot');
+    src: url('../fonts/Lato-Reg-webfont.woff') format('woff'),
+         url('../fonts/Lato-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato-Reg-webfont.ttf') format('truetype'),
+         url('../fonts/Lato-Reg-webfont.svg#Entypo') format('svg');
+    font-weight:300;
+    font-style:normal;
+}
+@font-face {
+    font-family: Lato;
+    src: url('../fonts/Lato-Bol-webfont.eot');
+    src: url('../fonts/Lato-Bol-webfont.woff') format('woff'),
+         url('../fonts/Lato-Bol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato-Bol-webfont.ttf') format('truetype'),
+         url('../fonts/Lato-Bol-webfont.svg#Entypo') format('svg');
+    font-weight:400;
+    font-style:normal;
+}
+
+::selection {
+    background:$darkOrange;
+    color:#fff;
+}
+
+::-moz-selection {
+    background:$darkOrange;
+    color:#fff;
+}
+
+::-webkit-selection {
+    background:$darkOrange;
+    color:#fff;
+}
+
+html {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	background:$darkGrey url(img/cloth.png);
+	background-size: 250px;
+}
+
+h1 {
+	font-family: 'Pacifico', Serif;
+	font-size:2.8em;
+	font-weight:300;
+	line-height:1.2em;
+	margin:0.5em 0;
+	color: $orange;
+	text-shadow: 0 0.03em 0.0625em rgba(0,0,0,0.15);
+}
+
+h2 {
+	font-family: 'Pacifico', Serif;
+	font-size:2.2em;
+	font-weight:300;
+	line-height:1.2em;
+	margin:0.4em 0;
+	color: $darkGrey;
+	text-shadow: 0 0.03em 0.0625em rgba(0,0,0,0.15);
+}
+
+h3 {
+	font-family: 'Lato', Serif;
+	font-size:1.6em;
+	font-weight:300;
+	line-height:1.2em;
+	margin:0.3em 0;
+	color: $orange;
+	text-shadow: 0 0.03em 0.0625em rgba(0,0,0,0.15);
+}
+
+h4 {
+	font-family: 'Lato', Serif;
+	font-size:1.4em;
+	font-weight:300;
+	line-height:1.2em;
+	margin:0.3em 0;
+	color: $darkGrey;
+	text-shadow: 0 0.03em 0.0625em rgba(0,0,0,0.15);
+}
+
+p {
+	font-size:1.4em;
+	font-weight:200;
+	line-height:1.5em;
+	margin:0.6em 0;
+}
+
+a {
+	color: inherit;
+}
+
+hr {
+	width: 100%;
+	height: 2px;
+	margin: 3em 0;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 2px dashed scale-lightness($orange, 90%);
+}
+
+.icon {
+    font-family:Entypo;
+    font-style:normal;
+    font-size:1.5em;
+}
+.pacifico {
+    font-family: 'Pacifico';
+}
+
+.button {
+	float: left;
+	margin: 0.5em 0;
+	padding: 0.5em;
+	font-family: 'Pacifico', Serif;
+	font-size:1.2em;
+	font-weight:300;
+	color: scale-lightness($orange, 95%);
+	background-color: $orange;
+	@include background(linear-gradient($orange, shade($orange, 15%)));
+	text-decoration: none;
+	border-radius: $sixPixels;
+	box-shadow:inset 0 0.0625em 0.0625em rgba(255,255,255,0.25), 0 0.0625em 0.125em rgba(0,0,0,0.25);
+	text-shadow:0 0.02em 0.02em rgba(0,0,0,0.25);
+}
+.button:hover {
+	@include background(linear-gradient(scale-lightness($orange, 10%), scale-lightness($orange, 5%)));
+}
+.button:active {
+	@include background(linear-gradient(shade($orange, 15%), $orange));
+}
+.button.huge {
+	width: 100%;
+	text-align: center;
+	font-size: 2.8em;
+	margin: 0.8em 0;
+	@include box-sizing(border-box);
+}
+
+.center {
+	text-align: center;
+}
+
+.white {
+	background: #fff;
+}
+
+.fat {
+	width: 100%;
+	max-width: $largestBreak;
+	margin: 0 auto;
+}
+
+.thin {
+	width: 100%;
+	max-width: $largeBreak;
+	margin: 0 auto;
+}
+
+.thinnest {
+	width: 100%;
+	max-width: $mediumLargeBreak;
+	margin: 0 auto;
+}
+
+.side {
+	background:$darkGrey url(img/cloth.png);
+	background-size: 250px;
+	color:#fff;
+	
+	ul {
+		float:left;
+		width:100%;
+		
+		a {
+			float:left;
+			width:100%;
+			padding: 0.6em;
+			@include box-sizing(border-box);
+			text-decoration:none;
+			color: $lightGrey;
+			font-weight: 300;
+			text-shadow: 0 0.0625em 0.0625em rgba(0,0,0,0.4);
+		}
+		
+		a:hover {
+			color:#fff;
+			background:scale-lightness($darkGrey, 5%);
+		}
+	}
+	
+	li {
+		float:left;
+		width:100%;
+		border-bottom: 1px solid rgba(255,255,255,0.08);
+		position:relative;
+		
+		.icon {
+			margin:0 0.4em 0 0;
+		}
+	}
+	li:last-child {
+		border-bottom: 0;
+	}
+}
+
+.you {
+	float:left;
+	width:100%;
+	background:rgba(0,0,0,0.15);
+	box-shadow:inset 0 -0.2 0.5em rgba(0,0,0,0.6);
+	border-bottom: 1px solid scale-lightness($darkGrey, 3%);
+	position: relative;
+	text-align:center;
+	
+	.avatar {
+		width:5em;
+		border-radius:50em;
+		box-shadow: 0 0.05em 0.08em rgba(255,255,255,0.25);
+	}
+	.avatar:hover {
+		opacity: 0.8;
+	}
+	
+	h2 {
+		font-family: 'Lato', Serif;
+		margin: 0.65em 0 0 0;
+		line-height:1.2em;
+		font-size: 1.2em;
+		font-weight: 300;
+		color: $orange;
+		text-shadow: 0 0.0625em 0.0625em rgba(0,0,0,0.4);
+		
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.page {
+	box-shadow:0 0 2em rgba(0,0,0,0.75);
+	@include border-top-radius($sixPixels);
+	
+	.scrollable {
+		top:4em;
+		background:$lightestGrey url(img/backgroundNoise.png);
+		background-size: 90px;
+	}
+}
+
+.topBar {
+	height:4em;
+	background-color:$orange;
+	@include background(linear-gradient($orange, shade($orange, 15%)));
+	box-shadow:inset 0 0.0625em 0.0625em rgba(255,255,255,0.25), 0 0.0625em 0.125em rgba(0,0,0,0.25);
+	@include border-top-radius($sixPixels);
+	
+	.slide {
+		position:absolute;
+		top:0;
+		left:0;
+		width:0.8em;
+		height:0.8em;
+		font-size:5em;
+		line-height:0.84em;
+		color:scale-lightness($orange, 95%);
+		text-decoration:none;
+		text-align:center;
+		text-shadow:0 0.02em 0.02em rgba(0,0,0,0.25);
+		@include border-top-left-radius(0.075em);
+	}
+	.slide:hover, .slide.pressed {
+		color:scale-lightness($orange, 80%);
+	}
+	.slide.pressed {
+		background:scale-lightness($orange, -20%);
+		border-right: 1px solid scale-lightness($orange, -3%);
+		box-shadow:inset -0.02em 0.02em 0.0625em rgba(0,0,0,0.15)
+	}
+	
+	h1 {
+		font-family: 'Pacifico', Sans-Serif;
+		color:scale-lightness($orange, 70%);
+		font-size:1.8em;
+		font-weight:300;
+		line-height:1.1em;
+		text-align:center;
+		text-shadow:0 -0.04em 0.04em rgba(0,0,0,0.25), 0 0 3em scale-lightness($orange, 50%);
+	}
+}
+
+.bottomBar {
+	
+}
+
+.cover {
+	background-image: url(../pictures/_MG_3901-blur.jpg);
+	background-position: center center;
+	
+	.heading {
+		padding: 3em 0;
+		background-color: transparent;
+		/*@include background(linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)));*/
+		
+		h1 {
+			color: #fff;
+			text-shadow: 0 0.0625em 0.125em rgba(0,0,0,0.25);
+			position: relative;
+			z-index: 100;
+		}
+		
+		h2 {
+			text-shadow: 0 0.0625em 0.0625em rgba(0,0,0,0.25);
+			position: relative;
+			z-index: 100;
+			color: #fff;
+			opacity: 0.7;
+		}
+	}
+	
+	.info {
+		padding-bottom: 1.8em;
+	}
+	
+	@media screen and (max-width: $largeBreak) {
+		background-size: 130%;
+	}
+	@media screen and (max-width: $mediumLargeBreak) {
+		background-size: 150%;
+	}
+	@media screen and (max-width: $smallMediumBreak) {
+		background-size: 180%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		background-size: 220%;
+	}
+	@media screen and (max-width: $smallestBreak) {
+		background-size: 300%;
+	}
+}
+
+.heading {
+	float: left;
+	width: 100%;
+	text-align:center;
+	background: #fff;
+	
+	h1 {
+		font-family: 'Lato', Serif;
+		max-width:$largestBreak;
+		font-size:3.8em;
+		font-weight:200;
+		margin:0.3em 0;
+	}
+	
+	h2 {
+		font-family: 'Lato', Serif;
+		max-width:$largestBreak;
+		text-transform: uppercase;
+		letter-spacing:0.75em;
+		font-size:1.2em;
+		font-weight: 200;
+		margin:1em 0 0.2em 0;
+	}
+	h2::before {
+		content: "➖ ";
+		font-family: entypo;
+		font-size: 1.2em;
+		opacity:0.5;
+	}
+	h2::after {
+		content: " ➖";
+		font-family: entypo;
+		font-size: 1.2em;
+		opacity:0.5;
+	}
+}
+
+.demo {
+	float: left;
+	width: 100%;
+	margin: 3em 0;
+	
+	li {
+		float: left;
+		width: 33.333333%;
+		margin-bottom: 2em;
+		position: relative;
+		text-align: center;
+		
+		span {
+			position: absolute;
+			top: 10%;
+			right: -6%;
+			font-size: 1.5em;
+			font-weight: 100;
+			color: $darkOrange;
+		}
+		
+		@media screen and (max-width: $mediumLargeBreak) {
+			width: 50%;
+		}
+		@media screen and (max-width: $smallestBreak) {
+			width: 100%;
+		}
+	}
+	
+	img {
+		width: 80%;
+		height: auto;
+		margin-bottom: 2em;
+	}
+	
+	p {
+		width: 80%;
+		margin: 0 10%;
+	}
+}

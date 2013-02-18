@@ -1,0 +1,271 @@
+/* Compass */
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/css3/images";
+@import "compass/css3/box-sizing";
+
+/* Colours */
+$lightestGrey:#f7f7f7;
+$lightGrey:#dcdcdc;
+$mediumGrey:#999;
+$darkGrey:#272727;
+$red:#ec6250;/*e1605a*/
+$darkGreen:#5a6e6c;
+$blue:#3f7083;
+
+/* Responsive break points */
+$largestBreak:75em;/*1200px*/
+$largeBreak:62.5em;/*1000px*/
+$mediumLargeBreak:37.5em;/*600px*/
+$mediumBreak:33.125em;/*530px*/
+$smallMediumBreak:28.125em;/*450px*/
+$smallBreak:25em;/*400px*/
+$smallestBreak:20em;/*320px*/
+
+/* border-radius */
+
+$threePixels:0.1875em;
+
+html {
+	float: left;
+	width: 100%;
+	height: 100%;
+	font-size: 100%;
+}
+
+body {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/*JS applies .scrolling to body too, to prevent extra scrollbar in IE*/
+body.scrolling {
+	overflow: hidden;
+}
+
+.animated {
+	transition-property: transform;  
+	transition-duration: 0.3s;  
+	transition-timing-function: ease-in-out;
+	
+	-ms-transition-property: -ms-transform;  
+	-ms-transition-duration: 0.3s;  
+	-ms-transition-timing-function: ease-in-out;
+	
+	-moz-transition-property: -moz-transform;  
+	-moz-transition-duration: 0.3s;  
+	-moz-transition-timing-function: ease-in-out;
+	
+	-webkit-transition-property: -webkit-transform;  
+	-webkit-transition-duration: 0.3s;  
+	-webkit-transition-timing-function: ease-in-out;
+	
+	-o-transition-property: -o-transform;  
+	-o-transition-duration: 0.3s;  
+	-o-transition-timing-function: ease-in-out;
+}
+
+.floated {
+	float:left;
+	width:100%;
+}
+
+.padded {
+	padding:2em;
+	@include box-sizing(border-box);
+}
+.paddedLight {
+	padding:1.2em;
+	@include box-sizing(border-box);
+}
+
+.window {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #333;
+	float:left;
+	width:100%;
+}
+.window.scrolling {
+	overflow: hidden;
+}
+
+.scrollable {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.side {
+	position: absolute;
+	top:0;
+	left:0;
+	width:20em;
+	word-wrap:break-word;
+	float:left;
+	
+	@media screen and (max-width: $smallMediumBreak) {
+		width:15em;
+	}
+	
+	.slide {
+		display: none;
+	}
+}
+.side.scrolling {
+	bottom:0;
+	transform:translate3d(-7em,0,0);
+	-ms-transform:translate3d(-7em,0,0);
+	-moz-transform:translate3d(-7em,0,0);
+	-webkit-transform:translate3d(-7em,0,0);
+	-o-transform:translate3d(-7em,0,0);
+	
+	.slide {
+		display: block;
+	}
+	.slide:first-child {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index: 90;
+		width:1.6em;
+		height:1.6em;
+		font-size:2.5em;
+		line-height: 1.6em;
+		color:$lightGrey;
+		text-decoration:none;
+		text-align:center;
+		opacity: 0.3;
+		
+		@media screen and (max-width: $mediumLargeBreak) {
+			font-size: 2.25em;
+		}
+		@media screen and (max-width: $smallMediumBreak) {
+			font-size: 2em;
+		}
+		@media screen and (max-width: $smallBreak) {
+			font-size: 1.75em;
+		}
+	}
+	.slide:first-child:hover {
+		opacity: 0.5;
+	}
+}
+.no-csstransforms3d .side.scrolling {
+	left:-7em;
+}
+
+.side.slid {
+	transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-webkit-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+}
+.no-csstransforms3d .side.slid {
+	left:0;
+}
+
+.page {
+	position:absolute;
+	top:0;
+	right:0;
+	left: 20em;
+	word-wrap:break-word;
+	float:left;
+	
+	.scrollable {
+		top:3em;
+		padding-bottom:3em;
+	}
+	
+	.scrollable {
+		@media screen and (max-width: $mediumLargeBreak) {
+			font-size: 90%;
+		}
+		@media screen and (max-width: $smallMediumBreak) {
+			font-size: 80%;
+		}
+		@media screen and (max-width: $smallBreak) {
+			font-size: 70%;
+		}
+	}
+}
+.page.scrolling {
+	bottom:0;
+	overflow:hidden;
+	width:100%;
+	left:0;
+	transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-webkit-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+}
+.no-csstransforms3d .page.scrolling {
+	left:0;
+}
+
+.page.slid {
+	transform:translate3d(20em,0,0);
+	-ms-transform:translate3d(20em,0,0);
+	-moz-transform:translate3d(20em,0,0);
+	-webkit-transform:translate3d(20em,0,0);
+	-o-transform:translate3d(20em,0,0);
+	
+	@media screen and (max-width: $smallMediumBreak) {
+		transform:translate3d(15em,0,0);
+		-ms-transform:translate3d(15em,0,0);
+		-moz-transform:translate3d(15em,0,0);
+		-webkit-transform:translate3d(15em,0,0);
+		-o-transform:translate3d(15em,0,0);
+	}
+}
+.no-csstransforms3d .page.slid {
+	left: 20em;
+	
+	@media screen and (max-width: $smallMediumBreak) {
+		left: 15em;
+	}
+}
+
+.topBar {
+	position:relative;
+	height:3em;
+	width:100%;
+	z-index:200;
+	word-wrap:break-word;
+	overflow:hidden;
+	
+	@media screen and (max-width: $mediumLargeBreak) {
+		font-size: 90%;
+	}
+	@media screen and (max-width: $smallMediumBreak) {
+		font-size: 80%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		font-size: 70%;
+	}
+}
+.bottomBar {
+	position:absolute;
+	bottom:0;
+	height:3em;
+	width:100%;
+	z-index:100;
+}

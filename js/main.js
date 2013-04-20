@@ -1,8 +1,8 @@
-jQuery(document).ready(function($) {
-	$('body').addClass('scrolling');
-	$('.overthrow').addClass('scrollableArea');
-	$('.sidebarLeft, .sidebarRight, .page').addClass('animatedSlide');
+$('body').addClass('scrolling');
+$('.overthrow').addClass('scrollableArea');
+$('.sidebarLeft, .sidebarRight, .page').addClass('animatedSlide');
 
+jQuery(document).ready(function($) {
 	$('.slideRight, .closeLeft').click(function() {
 		$('.sidebarLeft, .page').toggleClass('slidToRight');
 		$('.topBar .slideRight').toggleClass('pressed');

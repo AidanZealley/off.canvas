@@ -28,23 +28,25 @@ $smallestBreak:20em;/*320px*/
 $threePixels:0.1875em;
 
 html {
+	float: left;
 	width: 100%;
 	height: 100%;
 	font-size: 100%;
 }
 
 body {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
+
+/*JS applies .scrolling to body too, to prevent extra scrollbar in IE*/
 body.scrolling {
 	overflow: hidden;
 }
 
-.animatedSlide {
+.animated {
 	transition-property: transform;  
 	transition-duration: 0.3s;  
 	transition-timing-function: ease-in-out;
@@ -80,30 +82,66 @@ body.scrolling {
 	@include box-sizing(border-box);
 }
 
-.scrollableArea {
+.window {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #333;
+	float:left;
+	width:100%;
+}
+.window.scrolling {
+	overflow: hidden;
+}
+
+.scrollable {
 	position:absolute;
 	top:0;
 	right:0;
 	bottom:0;
 	left:0;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
 }
 
-.overthrow-enabled .scrollableArea {
+.overthrow-enabled .overthrow {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
 
-/* Left sliding side bar */
-.sidebarLeft, .sidebarRight {
-	float: left;
-	width: 20%;
+.side {
+	position: absolute;
+	top:0;
+	left:0;
+	width:20em;
 	word-wrap:break-word;
+	float:left;
 	
-	/* hides close button unless JS is enabled */
-	.closeLeft, .closeRight {
+	@media screen and (max-width: $smallMediumBreak) {
+		width:15em;
+	}
+	
+	.slide {
 		display: none;
+	}
+}
+.side.scrolling {
+	bottom:0;
+	transform:translate3d(-7em,0,0);
+	-ms-transform:translate3d(-7em,0,0);
+	-moz-transform:translate3d(-7em,0,0);
+	-webkit-transform:translate3d(-7em,0,0);
+	-o-transform:translate3d(-7em,0,0);
+	
+	.slide {
+		display: block;
+	}
+	.slide:first-child {
 		position:absolute;
 		top:0;
+		left:0;
 		z-index: 90;
 		width:1.6em;
 		height:1.6em;
@@ -113,88 +151,77 @@ body.scrolling {
 		text-decoration:none;
 		text-align:center;
 		opacity: 0.3;
-		font-family: 'Entypo';
 		
-		&:hover {
-			opacity: 0.5;
+		@media screen and (max-width: $mediumLargeBreak) {
+			font-size: 2.25em;
+		}
+		@media screen and (max-width: $smallMediumBreak) {
+			font-size: 2em;
+		}
+		@media screen and (max-width: $smallBreak) {
+			font-size: 1.75em;
 		}
 	}
-}
-
-/* Styles for both sidebars */
-.scrolling .sidebarLeft, .scrolling .sidebarRight {
-	position: absolute;
-	top:0;
-	bottom:0;
-	width:20em;
-	
-	.closeLeft, .closeRight {
-		display: block;
-	}
-	
-	@media screen and (max-width: $smallMediumBreak) {
-		width:15em;
+	.slide:first-child:hover {
+		opacity: 0.5;
 	}
 }
-.scrolling .sidebarLeft {
-	left:0;
-	transform:translate3d(-7em,0,0);
-	-ms-transform:translate3d(-7em,0,0);
-	-moz-transform:translate3d(-7em,0,0);
-	-webkit-transform:translate3d(-7em,0,0);
-	-o-transform:translate3d(-7em,0,0);
-	
-	.closeLeft {
-		left: 0;
-	}
-}
-.scrolling .sidebarRight {
-	right:0;
-	transform:translate3d(7em,0,0);
-	-ms-transform:translate3d(7em,0,0);
-	-moz-transform:translate3d(7em,0,0);
-	-webkit-transform:translate3d(7em,0,0);
-	-o-transform:translate3d(7em,0,0);
-	
-	.closeRight {
-		right: 0;
-	}
-}
-.no-csstransforms3d .scrolling .sidebarLeft {
+.no-csstransforms3d .side.scrolling {
 	left:-7em;
 }
-.no-csstransforms3d .scrolling .sidebarRight {
-	right:-7em;
-}
 
-/* Main central area styles */
-.page {
-	float: left;
-	width: 60%;
-	word-wrap:break-word;
-	position: relative;
-	z-index: 500;
+.side.slid {
 	transform:translate3d(0,0,0);
 	-ms-transform:translate3d(0,0,0);
 	-moz-transform:translate3d(0,0,0);
 	-webkit-transform:translate3d(0,0,0);
 	-o-transform:translate3d(0,0,0);
-	
-	.scrollableArea {
-		position:absolute;
-		top:4em;
-		bottom: 0;
-		background: #fff;
-	}
 }
-.scrolling .page {
-	overflow:hidden;
-	width:100%;
-	height: 100%;
+.no-csstransforms3d .side.slid {
+	left:0;
 }
 
-/* Slid styles */
-.slidToRight {
+.page {
+	position:absolute;
+	top:0;
+	right:0;
+	left: 20em;
+	word-wrap:break-word;
+	float:left;
+	
+	.scrollable {
+		top:3em;
+		padding-bottom:3em;
+	}
+	
+	.scrollable {
+		@media screen and (max-width: $mediumLargeBreak) {
+			font-size: 90%;
+		}
+		@media screen and (max-width: $smallMediumBreak) {
+			font-size: 80%;
+		}
+		@media screen and (max-width: $smallBreak) {
+			font-size: 70%;
+		}
+	}
+}
+.page.scrolling {
+	bottom:0;
+	overflow:hidden;
+	width:100%;
+	left:0;
+	transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-webkit-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+}
+.no-csstransforms3d .page.scrolling {
+	left:0;
+}
+
+.page.slid {
 	transform:translate3d(20em,0,0);
 	-ms-transform:translate3d(20em,0,0);
 	-moz-transform:translate3d(20em,0,0);
@@ -209,40 +236,11 @@ body.scrolling {
 		-o-transform:translate3d(15em,0,0);
 	}
 }
-.slidToLeft {
-	transform:translate3d(-20em,0,0);
-	-ms-transform:translate3d(-20em,0,0);
-	-moz-transform:translate3d(-20em,0,0);
-	-webkit-transform:translate3d(-20em,0,0);
-	-o-transform:translate3d(-20em,0,0);
-	
-	@media screen and (max-width: $smallMediumBreak) {
-		transform:translate3d(-15em,0,0);
-		-ms-transform:translate3d(-15em,0,0);
-		-moz-transform:translate3d(-15em,0,0);
-		-webkit-transform:translate3d(-15em,0,0);
-		-o-transform:translate3d(-15em,0,0);
-	}
-}
-.sidebarLeft.slidToRight, .sidebarRight.slidToRight, .sidebarLeft.slidToLeft, .sidebarRight.slidToLeft {
-	transform:translate3d(0,0,0);
-	-ms-transform:translate3d(0,0,0);
-	-moz-transform:translate3d(0,0,0);
-	-webkit-transform:translate3d(0,0,0);
-	-o-transform:translate3d(0,0,0);
-}
-.no-csstransforms3d .slidToRight {
+.no-csstransforms3d .page.slid {
 	left: 20em;
 	
 	@media screen and (max-width: $smallMediumBreak) {
 		left: 15em;
-	}
-}
-.no-csstransforms3d .slidToLeft {
-	right: 20em;
-	
-	@media screen and (max-width: $smallMediumBreak) {
-		right: 15em;
 	}
 }
 
@@ -253,4 +251,21 @@ body.scrolling {
 	z-index:200;
 	word-wrap:break-word;
 	overflow:hidden;
+	
+	@media screen and (max-width: $mediumLargeBreak) {
+		font-size: 90%;
+	}
+	@media screen and (max-width: $smallMediumBreak) {
+		font-size: 80%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		font-size: 70%;
+	}
+}
+.bottomBar {
+	position:absolute;
+	bottom:0;
+	height:3em;
+	width:100%;
+	z-index:100;
 }

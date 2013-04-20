@@ -58,22 +58,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /*320px*/
 /* border-radius */
 html {
-  float: left;
   width: 100%;
   height: 100%;
   font-size: 100%; }
 
 body {
-  float: left;
-  width: 100%;
-  height: 100%;
-  position: relative; }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
-/*JS applies .scrolling to body too, to prevent extra scrollbar in IE*/
 body.scrolling {
   overflow: hidden; }
 
-.animated {
+.animatedSlide {
   transition-property: transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -106,58 +105,27 @@ body.scrolling {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.window {
+.scrollableArea {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  background: #333;
+  left: 0; }
+
+.overthrow-enabled .scrollableArea {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+/* Left sliding side bar */
+.sidebarLeft, .sidebarRight {
   float: left;
-  width: 100%; }
-
-.window.scrolling {
-  overflow: hidden; }
-
-.scrollable {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; }
-
-.overthrow-enabled .overthrow {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; }
-
-.side {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20em;
+  width: 20%;
   word-wrap: break-word;
-  float: left; }
-  @media screen and (max-width: 28.125em) {
-    .side {
-      width: 15em; } }
-  .side .slide {
-    display: none; }
-
-.side.scrolling {
-  bottom: 0;
-  transform: translate3d(-7em, 0, 0);
-  -ms-transform: translate3d(-7em, 0, 0);
-  -moz-transform: translate3d(-7em, 0, 0);
-  -webkit-transform: translate3d(-7em, 0, 0);
-  -o-transform: translate3d(-7em, 0, 0); }
-  .side.scrolling .slide {
-    display: block; }
-  .side.scrolling .slide:first-child {
+  /* hides close button unless JS is enabled */ }
+  .sidebarLeft .closeLeft, .sidebarLeft .closeRight, .sidebarRight .closeLeft, .sidebarRight .closeRight {
+    display: none;
     position: absolute;
     top: 0;
-    left: 0;
     z-index: 90;
     width: 1.6em;
     height: 1.6em;
@@ -166,85 +134,119 @@ body.scrolling {
     color: gainsboro;
     text-decoration: none;
     text-align: center;
-    opacity: 0.3; }
-    @media screen and (max-width: 37.5em) {
-      .side.scrolling .slide:first-child {
-        font-size: 2.25em; } }
-    @media screen and (max-width: 28.125em) {
-      .side.scrolling .slide:first-child {
-        font-size: 2em; } }
-    @media screen and (max-width: 25em) {
-      .side.scrolling .slide:first-child {
-        font-size: 1.75em; } }
-  .side.scrolling .slide:first-child:hover {
-    opacity: 0.5; }
+    opacity: 0.3;
+    font-family: 'Entypo'; }
+    .sidebarLeft .closeLeft:hover, .sidebarLeft .closeRight:hover, .sidebarRight .closeLeft:hover, .sidebarRight .closeRight:hover {
+      opacity: 0.5; }
 
-.no-csstransforms3d .side.scrolling {
-  left: -7em; }
-
-.side.slid {
-  transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0); }
-
-.no-csstransforms3d .side.slid {
-  left: 0; }
-
-.page {
+/* Styles for both sidebars */
+.scrolling .sidebarLeft, .scrolling .sidebarRight {
   position: absolute;
   top: 0;
-  right: 0;
-  left: 20em;
-  word-wrap: break-word;
-  float: left; }
-  .page .scrollable {
-    top: 3em;
-    padding-bottom: 3em; }
-  @media screen and (max-width: 37.5em) {
-    .page .scrollable {
-      font-size: 90%; } }
-  @media screen and (max-width: 28.125em) {
-    .page .scrollable {
-      font-size: 80%; } }
-  @media screen and (max-width: 25em) {
-    .page .scrollable {
-      font-size: 70%; } }
-
-.page.scrolling {
   bottom: 0;
-  overflow: hidden;
-  width: 100%;
+  width: 20em; }
+  .scrolling .sidebarLeft .closeLeft, .scrolling .sidebarLeft .closeRight, .scrolling .sidebarRight .closeLeft, .scrolling .sidebarRight .closeRight {
+    display: block; }
+  @media screen and (max-width: 28.125em) {
+    .scrolling .sidebarLeft, .scrolling .sidebarRight {
+      width: 15em; } }
+
+.scrolling .sidebarLeft {
   left: 0;
+  transform: translate3d(-7em, 0, 0);
+  -ms-transform: translate3d(-7em, 0, 0);
+  -moz-transform: translate3d(-7em, 0, 0);
+  -webkit-transform: translate3d(-7em, 0, 0);
+  -o-transform: translate3d(-7em, 0, 0); }
+  .scrolling .sidebarLeft .closeLeft {
+    left: 0; }
+
+.scrolling .sidebarRight {
+  right: 0;
+  transform: translate3d(7em, 0, 0);
+  -ms-transform: translate3d(7em, 0, 0);
+  -moz-transform: translate3d(7em, 0, 0);
+  -webkit-transform: translate3d(7em, 0, 0);
+  -o-transform: translate3d(7em, 0, 0); }
+  .scrolling .sidebarRight .closeRight {
+    right: 0; }
+
+.no-csstransforms3d .scrolling .sidebarLeft {
+  left: -7em; }
+
+.no-csstransforms3d .scrolling .sidebarRight {
+  right: -7em; }
+
+/* Main central area styles */
+.page {
+  float: left;
+  width: 60%;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 500;
   transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0); }
+  .page .scrollableArea {
+    position: absolute;
+    top: 4em;
+    bottom: 0;
+    background: #fff; }
 
-.no-csstransforms3d .page.scrolling {
-  left: 0; }
+.scrolling .page {
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
 
-.page.slid {
+/* Slid styles */
+.slidToRight {
   transform: translate3d(20em, 0, 0);
   -ms-transform: translate3d(20em, 0, 0);
   -moz-transform: translate3d(20em, 0, 0);
   -webkit-transform: translate3d(20em, 0, 0);
   -o-transform: translate3d(20em, 0, 0); }
   @media screen and (max-width: 28.125em) {
-    .page.slid {
+    .slidToRight {
       transform: translate3d(15em, 0, 0);
       -ms-transform: translate3d(15em, 0, 0);
       -moz-transform: translate3d(15em, 0, 0);
       -webkit-transform: translate3d(15em, 0, 0);
       -o-transform: translate3d(15em, 0, 0); } }
 
-.no-csstransforms3d .page.slid {
+.slidToLeft {
+  transform: translate3d(-20em, 0, 0);
+  -ms-transform: translate3d(-20em, 0, 0);
+  -moz-transform: translate3d(-20em, 0, 0);
+  -webkit-transform: translate3d(-20em, 0, 0);
+  -o-transform: translate3d(-20em, 0, 0); }
+  @media screen and (max-width: 28.125em) {
+    .slidToLeft {
+      transform: translate3d(-15em, 0, 0);
+      -ms-transform: translate3d(-15em, 0, 0);
+      -moz-transform: translate3d(-15em, 0, 0);
+      -webkit-transform: translate3d(-15em, 0, 0);
+      -o-transform: translate3d(-15em, 0, 0); } }
+
+.sidebarLeft.slidToRight, .sidebarRight.slidToRight, .sidebarLeft.slidToLeft, .sidebarRight.slidToLeft {
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0); }
+
+.no-csstransforms3d .slidToRight {
   left: 20em; }
   @media screen and (max-width: 28.125em) {
-    .no-csstransforms3d .page.slid {
+    .no-csstransforms3d .slidToRight {
       left: 15em; } }
+
+.no-csstransforms3d .slidToLeft {
+  right: 20em; }
+  @media screen and (max-width: 28.125em) {
+    .no-csstransforms3d .slidToLeft {
+      right: 15em; } }
 
 .topBar {
   position: relative;
@@ -253,19 +255,3 @@ body.scrolling {
   z-index: 200;
   word-wrap: break-word;
   overflow: hidden; }
-  @media screen and (max-width: 37.5em) {
-    .topBar {
-      font-size: 90%; } }
-  @media screen and (max-width: 28.125em) {
-    .topBar {
-      font-size: 80%; } }
-  @media screen and (max-width: 25em) {
-    .topBar {
-      font-size: 70%; } }
-
-.bottomBar {
-  position: absolute;
-  bottom: 0;
-  height: 3em;
-  width: 100%;
-  z-index: 100; }

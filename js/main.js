@@ -1,8 +1,8 @@
-$('body').addClass('scrolling');
-$('.overthrow').addClass('scrollableArea');
-$('.sidebarLeft, .sidebarRight, .page').addClass('animatedSlide');
-
 jQuery(document).ready(function($) {
+	$('html').addClass('scrolling');
+	$('.overthrow').addClass('scrollableArea');
+	$('.sidebarLeft, .sidebarRight, .page').addClass('animatedSlide');
+
 	$('.slideRight, .closeLeft').click(function() {
 		$('.sidebarLeft, .page').toggleClass('slidToRight');
 		$('.topBar .slideRight').toggleClass('pressed');

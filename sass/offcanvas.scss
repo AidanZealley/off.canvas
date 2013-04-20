@@ -32,6 +32,9 @@ html {
 	height: 100%;
 	font-size: 100%;
 }
+html.scrolling {
+	overflow: hidden;
+}
 
 body {
 	position: absolute;
@@ -39,9 +42,7 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-}
-body.scrolling {
-	overflow: hidden;
+	width: 100%;
 }
 
 .animatedSlide {
@@ -66,25 +67,11 @@ body.scrolling {
 	-o-transition-timing-function: ease-in-out;
 }
 .no-csstransforms3d .animatedSlide {
-	transition-property: position;  
-	transition-duration: 0.3s;  
-	transition-timing-function: ease-in-out;
-	
-	-ms-transition-property: position;  
-	-ms-transition-duration: 0.3s;  
-	-ms-transition-timing-function: ease-in-out;
-	
-	-moz-transition-property: position;  
-	-moz-transition-duration: 0.3s;  
-	-moz-transition-timing-function: ease-in-out;
-	
-	-webkit-transition-property: position;  
-	-webkit-transition-duration: 0.3s;  
-	-webkit-transition-timing-function: ease-in-out;
-	
-	-o-transition-property: position;  
-	-o-transition-duration: 0.3s;  
-	-o-transition-timing-function: ease-in-out; 
+	transition: position 0.3s ease-in-out;  
+	-ms-transition: position 0.3s ease-in-out;   
+	-moz-transition: position 0.3s ease-in-out;
+	-webkit-transition: position 0.3s ease-in-out; 
+	-o-transition: position 0.3s ease-in-out; 
 }
 
 .floated {
@@ -148,17 +135,17 @@ body.scrolling {
 	top:0;
 	bottom:0;
 	width:20em;
+	z-index: 100;
 	
 	.closeLeft, .closeRight {
 		display: block;
 	}
 	
 	@media screen and (max-width: $smallMediumBreak) {
-		width:15em;
+		width: 90%;
 	}
 }
 .scrolling .sidebarLeft {
-	left:0;
 	transform:translate3d(-7em,0,0);
 	-ms-transform:translate3d(-7em,0,0);
 	-moz-transform:translate3d(-7em,0,0);
@@ -170,7 +157,7 @@ body.scrolling {
 	}
 }
 .scrolling .sidebarRight {
-	right:0;
+	right: 0;
 	transform:translate3d(7em,0,0);
 	-ms-transform:translate3d(7em,0,0);
 	-moz-transform:translate3d(7em,0,0);
@@ -195,11 +182,6 @@ body.scrolling {
 	word-wrap:break-word;
 	position: relative;
 	z-index: 500;
-	transform:translate3d(0,0,0);
-	-ms-transform:translate3d(0,0,0);
-	-moz-transform:translate3d(0,0,0);
-	-webkit-transform:translate3d(0,0,0);
-	-o-transform:translate3d(0,0,0);
 	
 	.scrollableArea {
 		position:absolute;
@@ -209,13 +191,12 @@ body.scrolling {
 	}
 }
 .scrolling .page {
-	overflow:hidden;
 	width:100%;
 	height: 100%;
 }
 
 /* Slid styles */
-.slidToRight {
+.page.slidToRight {
 	transform:translate3d(20em,0,0);
 	-ms-transform:translate3d(20em,0,0);
 	-moz-transform:translate3d(20em,0,0);
@@ -223,14 +204,14 @@ body.scrolling {
 	-o-transform:translate3d(20em,0,0);
 	
 	@media screen and (max-width: $smallMediumBreak) {
-		transform:translate3d(15em,0,0);
-		-ms-transform:translate3d(15em,0,0);
-		-moz-transform:translate3d(15em,0,0);
-		-webkit-transform:translate3d(15em,0,0);
-		-o-transform:translate3d(15em,0,0);
+		transform:translate3d(90%,0,0);
+		-ms-transform:translate3d(90%,0,0);
+		-moz-transform:translate3d(90%,0,0);
+		-webkit-transform:translate3d(90%,0,0);
+		-o-transform:translate3d(90%,0,0);
 	}
 }
-.slidToLeft {
+.page.slidToLeft {
 	transform:translate3d(-20em,0,0);
 	-ms-transform:translate3d(-20em,0,0);
 	-moz-transform:translate3d(-20em,0,0);
@@ -238,33 +219,35 @@ body.scrolling {
 	-o-transform:translate3d(-20em,0,0);
 	
 	@media screen and (max-width: $smallMediumBreak) {
-		transform:translate3d(-15em,0,0);
-		-ms-transform:translate3d(-15em,0,0);
-		-moz-transform:translate3d(-15em,0,0);
-		-webkit-transform:translate3d(-15em,0,0);
-		-o-transform:translate3d(-15em,0,0);
+		transform:translate3d(-90%,0,0);
+		-ms-transform:translate3d(-90%,0,0);
+		-moz-transform:translate3d(-90%,0,0);
+		-webkit-transform:translate3d(-90%,0,0);
+		-o-transform:translate3d(-90%,0,0);
 	}
 }
-.sidebarLeft.slidToRight, .sidebarRight.slidToRight, .sidebarLeft.slidToLeft, .sidebarRight.slidToLeft {
+.no-csstransforms3d .page.slidToRight {
+	left: 20em;
+	
+	@media screen and (max-width: $smallMediumBreak) {
+		left: 90%;
+	}
+}
+.no-csstransforms3d .page.slidToLeft {
+	left: -20em;
+	
+	@media screen and (max-width: $smallMediumBreak) {
+		left: -90%;
+	}
+}
+
+.sidebarLeft.slidToRight, .sidebarRight.slidToLeft {
 	transform:translate3d(0,0,0);
 	-ms-transform:translate3d(0,0,0);
 	-moz-transform:translate3d(0,0,0);
 	-webkit-transform:translate3d(0,0,0);
 	-o-transform:translate3d(0,0,0);
-}
-.no-csstransforms3d .slidToRight {
-	left: 20em;
-	
-	@media screen and (max-width: $smallMediumBreak) {
-		left: 15em;
-	}
-}
-.no-csstransforms3d .slidToLeft {
-	right: 20em;
-	
-	@media screen and (max-width: $smallMediumBreak) {
-		right: 15em;
-	}
+	z-index: 200;
 }
 .no-csstransforms3d .sidebarLeft.slidToRight {
 	left: 0;
@@ -277,7 +260,7 @@ body.scrolling {
 	position:relative;
 	height:3em;
 	width:100%;
-	z-index:200;
+	z-index:1000;
 	word-wrap:break-word;
 	overflow:hidden;
 }

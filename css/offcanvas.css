@@ -124,7 +124,7 @@ body {
   overflow: auto;
   -webkit-overflow-scrolling: touch; }
 
-/* Left sliding side bar */
+/* Sliding side bars */
 .sidebarLeft, .sidebarRight {
   float: left;
   width: 20%;
@@ -152,13 +152,12 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 20em;
-  z-index: 100; }
+  width: 20em; }
   .scrolling .sidebarLeft .closeLeft, .scrolling .sidebarLeft .closeRight, .scrolling .sidebarRight .closeLeft, .scrolling .sidebarRight .closeRight {
     display: block; }
   @media screen and (max-width: 28.125em) {
     .scrolling .sidebarLeft, .scrolling .sidebarRight {
-      width: 90%; } }
+      width: 80%; } }
 
 .scrolling .sidebarLeft {
   transform: translate3d(-7em, 0, 0);
@@ -211,11 +210,11 @@ body {
   -o-transform: translate3d(20em, 0, 0); }
   @media screen and (max-width: 28.125em) {
     .page.slidToRight {
-      transform: translate3d(90%, 0, 0);
-      -ms-transform: translate3d(90%, 0, 0);
-      -moz-transform: translate3d(90%, 0, 0);
-      -webkit-transform: translate3d(90%, 0, 0);
-      -o-transform: translate3d(90%, 0, 0); } }
+      transform: translate3d(80%, 0, 0);
+      -ms-transform: translate3d(80%, 0, 0);
+      -moz-transform: translate3d(80%, 0, 0);
+      -webkit-transform: translate3d(80%, 0, 0);
+      -o-transform: translate3d(80%, 0, 0); } }
 
 .page.slidToLeft {
   transform: translate3d(-20em, 0, 0);
@@ -225,11 +224,11 @@ body {
   -o-transform: translate3d(-20em, 0, 0); }
   @media screen and (max-width: 28.125em) {
     .page.slidToLeft {
-      transform: translate3d(-90%, 0, 0);
-      -ms-transform: translate3d(-90%, 0, 0);
-      -moz-transform: translate3d(-90%, 0, 0);
-      -webkit-transform: translate3d(-90%, 0, 0);
-      -o-transform: translate3d(-90%, 0, 0); } }
+      transform: translate3d(-80%, 0, 0);
+      -ms-transform: translate3d(-80%, 0, 0);
+      -moz-transform: translate3d(-80%, 0, 0);
+      -webkit-transform: translate3d(-80%, 0, 0);
+      -o-transform: translate3d(-80%, 0, 0); } }
 
 .no-csstransforms3d .page.slidToRight {
   left: 20em; }
@@ -248,8 +247,7 @@ body {
   -ms-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  z-index: 200; }
+  -o-transform: translate3d(0, 0, 0); }
 
 .no-csstransforms3d .sidebarLeft.slidToRight {
   left: 0; }

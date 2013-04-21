@@ -435,22 +435,6 @@ hr {
 	.info {
 		padding-bottom: 1.8em;
 	}
-	
-	@media screen and (max-width: $largeBreak) {
-		background-size: 130%;
-	}
-	@media screen and (max-width: $mediumLargeBreak) {
-		background-size: 150%;
-	}
-	@media screen and (max-width: $smallMediumBreak) {
-		background-size: 180%;
-	}
-	@media screen and (max-width: $smallBreak) {
-		background-size: 220%;
-	}
-	@media screen and (max-width: $smallestBreak) {
-		background-size: 300%;
-	}
 }
 
 .heading {

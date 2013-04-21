@@ -18,7 +18,8 @@ jQuery(document).ready(function($) {
 	$(document).keydown(function(e) {
 		if (e.keyCode === 39) {
 			if ($('.sidebarRight, .page').hasClass('slidToLeft')) {
-				$('.sidebarRight, .page').removeClass('slidToLeft');
+				$('.page').removeClass('slidToLeft');
+				$('.sidebarRight').removeClass('slidToLeft');
 				$('.topBar .slideLeft').removeClass('pressed');
 				return false;
 			} else {
@@ -30,7 +31,8 @@ jQuery(document).ready(function($) {
 
 		if (e.keyCode === 37) {
 			if ($('.sidebarLeft, .page').hasClass('slidToRight')) {
-				$('.sidebarLeft, .page').removeClass('slidToRight');
+				$('.page').removeClass('slidToRight');
+				$('.sidebarLeft').removeClass('slidToRight');
 				$('.topBar .slideRight').removeClass('pressed');
 				return false;
 			} else {

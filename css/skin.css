@@ -406,21 +406,6 @@ hr {
       opacity: 0.7; }
   .cover .info {
     padding-bottom: 1.8em; }
-  @media screen and (max-width: 62.5em) {
-    .cover {
-      background-size: 130%; } }
-  @media screen and (max-width: 37.5em) {
-    .cover {
-      background-size: 150%; } }
-  @media screen and (max-width: 28.125em) {
-    .cover {
-      background-size: 180%; } }
-  @media screen and (max-width: 25em) {
-    .cover {
-      background-size: 220%; } }
-  @media screen and (max-width: 20em) {
-    .cover {
-      background-size: 300%; } }
 
 .heading {
   float: left;

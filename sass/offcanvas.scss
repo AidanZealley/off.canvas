@@ -44,6 +44,9 @@ body {
 	left: 0;
 	width: 100%;
 }
+.scrolling body {
+	overflow: hidden;
+}
 
 .animatedSlide {
 	transition-property: transform;  
@@ -106,6 +109,7 @@ body {
 	float: left;
 	width: 20%;
 	word-wrap:break-word;
+	z-index: 100;
 	
 	/* hides close button unless JS is enabled */
 	.closeLeft, .closeRight {
@@ -145,6 +149,7 @@ body {
 	}
 }
 .scrolling .sidebarLeft {
+	left: 0;
 	transform:translate3d(-7em,0,0);
 	-ms-transform:translate3d(-7em,0,0);
 	-moz-transform:translate3d(-7em,0,0);
@@ -167,17 +172,15 @@ body {
 		right: 0;
 	}
 }
-.no-csstransforms3d .scrolling .sidebarLeft {
+/*.no-csstransforms3d .scrolling .sidebarLeft {
 	left:-7em;
 }
 .no-csstransforms3d .scrolling .sidebarRight {
 	right:-7em;
-}
+}*/
 
 /* Main central area styles */
 .page {
-	float: left;
-	width: 60%;
 	word-wrap:break-word;
 	position: relative;
 	z-index: 500;
@@ -192,6 +195,10 @@ body {
 .scrolling .page {
 	width:100%;
 	height: 100%;
+}
+.no-js .page {
+	float: left;
+	width: 60%;
 }
 
 /* Slid styles */
@@ -246,6 +253,7 @@ body {
 	-moz-transform:translate3d(0,0,0);
 	-webkit-transform:translate3d(0,0,0);
 	-o-transform:translate3d(0,0,0);
+	z-index: 200;
 }
 .no-csstransforms3d .sidebarLeft.slidToRight {
 	left: 0;

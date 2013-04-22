@@ -11,6 +11,6 @@ Basic off canvas style shell with left and right sidebars and a no javascript fa
 
 Issues:
 =======
-Bugs left to squish in IE10
-Overlapping sidebars on smaller screens
-Some javascript execution speed issues on mobile devices
+- [ ] Bugs left to squish in IE10
+- [ ] Overlapping sidebars on smaller screens
+- [ ] Some javascript execution speed issues on mobile devices

@@ -8,4 +8,7 @@ http://aidanzealley.com/offcanvas/
 
 Basic off canvas style shell with left and right sidebars and a no javascript fallback.
 
-Bugs left to iron out in IE
+Issues:
+Bugs left to squish in IE10
+Overlapping sidebars on smaller screens
+Some javascript execution speed issues on mobile devices

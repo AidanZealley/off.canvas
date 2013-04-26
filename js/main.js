@@ -1,8 +1,4 @@
 jQuery(document).ready(function($) {
-
-});
-
-jQuery(document).ready(function($) {
 	$('html').addClass('scrolling');
 	$('.overthrow').addClass('scrollableArea');
 	$('.sidebarLeft, .sidebarRight, .page').addClass('animatedSlide');

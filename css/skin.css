@@ -403,7 +403,7 @@ hr {
       position: relative;
       z-index: 100;
       color: #fff;
-      opacity: 0.7; }
+      opacity: 0.8; }
   .cover .info {
     padding-bottom: 1.8em; }
 
@@ -436,6 +436,9 @@ hr {
     font-family: entypo;
     font-size: 1.2em;
     opacity: 0.5; }
+  @media screen and (max-width: 28.125em) {
+    .heading {
+      font-size: 90%; } }
 
 .demo {
   float: left;

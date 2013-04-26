@@ -196,9 +196,18 @@ body {
   z-index: 500; }
   .page .scrollableArea {
     position: absolute;
-    top: 4em;
+    top: 4rem;
     bottom: 0;
     background: #fff; }
+    @media screen and (max-width: 37.5em) {
+      .page .scrollableArea {
+        font-size: 90%; } }
+    @media screen and (max-width: 28.125em) {
+      .page .scrollableArea {
+        font-size: 85%; } }
+    @media screen and (max-width: 20em) {
+      .page .scrollableArea {
+        font-size: 80%; } }
 
 .scrolling .page {
   width: 100%;

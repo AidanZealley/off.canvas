@@ -181,19 +181,29 @@ body {
 
 /* Main central area styles */
 .page {
-	word-wrap:break-word;
+	word-wrap: break-word;
 	position: relative;
 	z-index: 500;
 	
 	.scrollableArea {
-		position:absolute;
-		top:4em;
+		position: absolute;
+		top: 4rem;
 		bottom: 0;
 		background: #fff;
+		
+		@media screen and (max-width: $mediumLargeBreak) {
+			font-size: 90%;
+		}
+		@media screen and (max-width: $smallMediumBreak) {
+			font-size: 85%;
+		}
+		@media screen and (max-width: $smallestBreak) {
+			font-size: 80%;
+		}
 	}
 }
 .scrolling .page {
-	width:100%;
+	width: 100%;
 	height: 100%;
 }
 .no-js .page {

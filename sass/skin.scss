@@ -124,7 +124,7 @@ html {
 }
 
 body {
-	background:$darkGrey url(img/cloth.png);
+	background-image: url(img/cloth.png);
 	background-size: 250px;
 }
 
@@ -264,7 +264,7 @@ hr {
 }
 
 .sidebarLeft, .sidebarRight {
-	background:$darkGrey url(img/cloth.png);
+	background-image: url(img/cloth.png);
 	background-size: 250px;
 	color:#fff;
 	
@@ -359,17 +359,8 @@ hr {
 	@include border-top-radius($sixPixels);
 	
 	.slideRight, .slideLeft {
-		position:absolute;
-		top:0;
-		width:0.8em;
-		height:0.8em;
-		font-size:5em;
-		line-height:0.84em;
 		color:scale-lightness($orange, 95%);
-		text-decoration:none;
-		text-align:center;
 		text-shadow:0 0.02em 0.02em rgba(0,0,0,0.25);
-		font-family: Entypo;
 	}
 	.slideRight:hover, .slideRight.pressed, .slideLeft:hover, .slideLeft.pressed {
 		color:scale-lightness($orange, 80%);
@@ -387,11 +378,9 @@ hr {
 	}
 	
 	.slideRight {
-		left:0;
 		@include border-top-left-radius(0.075em);
 	}
 	.slideLeft {
-		right:0;
 		@include border-top-right-radius(0.075em);
 	}
 	

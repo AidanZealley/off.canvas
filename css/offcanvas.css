@@ -71,7 +71,8 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  background-color: #272727; }
 
 .scrolling body {
   overflow: hidden; }
@@ -133,6 +134,7 @@ body {
   width: 20%;
   word-wrap: break-word;
   z-index: 100;
+  background-color: #272727;
   /* hides close button unless JS is enabled */ }
   .sidebarLeft .shut, .sidebarRight .shut {
     display: none;
@@ -274,8 +276,28 @@ body {
 
 .topBar {
   position: relative;
-  height: 3em;
+  height: 4em;
   width: 100%;
   z-index: 1000;
   word-wrap: break-word;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #999999; }
+  .topBar .slideRight, .topBar .slideLeft {
+    position: absolute;
+    top: 0;
+    width: 0.8em;
+    height: 0.8em;
+    font-size: 5em;
+    line-height: 0.84em;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Entypo'; }
+  .topBar .slideRight:hover, .topBar .slideRight.pressed, .topBar .slideLeft:hover, .topBar .slideLeft.pressed {
+    color: white; }
+  .topBar .slideRight.pressed, .topBar .slideLeft.pressed {
+    background: #7a7a7a; }
+  .topBar .slideRight {
+    left: 0; }
+  .topBar .slideLeft {
+    right: 0; }

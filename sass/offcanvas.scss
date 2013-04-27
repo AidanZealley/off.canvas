@@ -112,7 +112,7 @@ body {
 	z-index: 100;
 	
 	/* hides close button unless JS is enabled */
-	.closeLeft, .closeRight {
+	.shut {
 		display: none;
 		position:absolute;
 		top:0;
@@ -140,7 +140,7 @@ body {
 	bottom:0;
 	width:20em;
 	
-	.closeLeft, .closeRight {
+	.shutt {
 		display: block;
 	}
 	
@@ -156,7 +156,7 @@ body {
 	-webkit-transform:translate3d(-7em,0,0);
 	-o-transform:translate3d(-7em,0,0);
 	
-	.closeLeft {
+	.shut {
 		left: 0;
 	}
 }
@@ -168,7 +168,7 @@ body {
 	-webkit-transform:translate3d(7em,0,0);
 	-o-transform:translate3d(7em,0,0);
 	
-	.closeRight {
+	.shut {
 		right: 0;
 	}
 }
@@ -212,7 +212,7 @@ body {
 }
 
 /* Slid styles */
-.page.slidToRight {
+.page.slidRight {
 	transform:translate3d(20em,0,0);
 	-ms-transform:translate3d(20em,0,0);
 	-moz-transform:translate3d(20em,0,0);
@@ -227,7 +227,7 @@ body {
 		-o-transform:translate3d(80%,0,0);
 	}
 }
-.page.slidToLeft {
+.page.slidLeft {
 	transform:translate3d(-20em,0,0);
 	-ms-transform:translate3d(-20em,0,0);
 	-moz-transform:translate3d(-20em,0,0);
@@ -242,14 +242,14 @@ body {
 		-o-transform:translate3d(-80%,0,0);
 	}
 }
-.no-csstransforms3d .page.slidToRight {
+.no-csstransforms3d .page.slidRight {
 	left: 20em;
 	
 	@media screen and (max-width: $smallMediumBreak) {
 		left: 90%;
 	}
 }
-.no-csstransforms3d .page.slidToLeft {
+.no-csstransforms3d .page.slidLeft {
 	left: -20em;
 	
 	@media screen and (max-width: $smallMediumBreak) {
@@ -257,7 +257,7 @@ body {
 	}
 }
 
-.sidebarLeft.slidToRight, .sidebarRight.slidToLeft {
+.sidebarLeft.slidRight, .sidebarRight.slidLeft {
 	transform:translate3d(0,0,0);
 	-ms-transform:translate3d(0,0,0);
 	-moz-transform:translate3d(0,0,0);
@@ -265,10 +265,10 @@ body {
 	-o-transform:translate3d(0,0,0);
 	z-index: 200;
 }
-.no-csstransforms3d .sidebarLeft.slidToRight {
+.no-csstransforms3d .sidebarLeft.slidRight {
 	left: 0;
 }
-.no-csstransforms3d .sidebarRight.slidToLeft {
+.no-csstransforms3d .sidebarRight.slidLeft {
 	right: 0;
 }
 

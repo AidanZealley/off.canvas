@@ -157,7 +157,7 @@ body {
   top: 0;
   bottom: 0;
   width: 20em; }
-  .scrolling .sidebarLeft .shutt, .scrolling .sidebarRight .shutt {
+  .scrolling .sidebarLeft .shut, .scrolling .sidebarRight .shut {
     display: block; }
   @media screen and (max-width: 28.125em) {
     .scrolling .sidebarLeft, .scrolling .sidebarRight {

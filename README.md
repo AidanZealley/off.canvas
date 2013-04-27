@@ -5,11 +5,13 @@ Off canvas style HTML, CSS and JavaScript framework
 
 Without JavaScript it falls back to a three column layout
 
+
 Demo:
 =====
 http://aidanzealley.com/offcanvas/
 
 Basic off canvas style shell with left and right sidebars.
+
 
 Issues:
 =======

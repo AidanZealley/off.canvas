@@ -10,18 +10,21 @@ jQuery(document).ready(function($) {
 		switch (direction) {
 			case'right':
 				$('.page, .sidebarLeft').addClass('slidRight');
+				$('.topBar .slideRight').addClass('pressed');
 
 				slidRight = 1;
 			break;
 
 			case 'left':
 				$('.page, .sidebarRight').addClass('slidLeft');
+				$('.topBar .slideLeft').addClass('pressed');
 
 				slidLeft = 1;
 			break;
 
 			case 'shut':
 				$('.page, .sidebarLeft, .sidebarRight').removeClass('slidRight slidLeft');
+				$('.topBar .slideRight, .topBar .slideLeft').removeClass('pressed');
 
 				slidRight = 0;
 				slidLeft = 0;

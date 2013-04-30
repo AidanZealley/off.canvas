@@ -62,6 +62,9 @@ html {
   height: 100%;
   font-size: 100%; }
 
+html.offcanvas {
+  overflow: hidden; }
+
 body {
   position: absolute;
   top: 0;
@@ -71,7 +74,7 @@ body {
   width: 100%;
   background-color: #272727; }
 
-body.offcanvas {
+.offcanvas body {
   overflow: hidden; }
 
 .animatedSlide {
@@ -114,14 +117,12 @@ body.offcanvas {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.scrollableArea {
+.offcanvas .scrollableArea {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
-
-.overthrow-enabled .scrollableArea {
+  left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch; }
 

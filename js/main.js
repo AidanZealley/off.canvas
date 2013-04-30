@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	$('body').offcanvas({
+	$('html').offcanvas({
 		hasSidebarRight: true
 	});
 });

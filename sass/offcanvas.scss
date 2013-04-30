@@ -32,6 +32,9 @@ html {
 	height: 100%;
 	font-size: 100%;
 }
+html.offcanvas {
+	overflow: hidden;
+}
 
 body {
 	position: absolute;
@@ -42,7 +45,7 @@ body {
 	width: 100%;
 	background-color: $darkGrey;
 }
-body.offcanvas {
+.offcanvas body {
 	overflow: hidden;
 }
 
@@ -89,17 +92,14 @@ body.offcanvas {
 	@include box-sizing(border-box);
 }
 
-.scrollableArea {
+.offcanvas .scrollableArea {
 	position:absolute;
 	top:0;
 	right:0;
 	bottom:0;
 	left:0;
-}
-
-.overthrow-enabled .scrollableArea {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 /* Sliding side bars */

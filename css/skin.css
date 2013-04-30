@@ -238,6 +238,8 @@ hr {
   box-sizing: border-box; }
 
 .center {
+  float: left;
+  width: 100%;
   text-align: center; }
 
 .white {

@@ -38,12 +38,17 @@
       	    
       	    var slidRight = 0;
       	    var slidLeft = 0;
+      	    
+      	    var timeout = setTimeout(function(sidebar) {
+      	    	$(sidebar).removeClass('show');
+      	    }, 400);
 
       	    // Function that performs the sliding by adding classes to the relavent elements
       	    function slide( direction, settings ) {
       	    	switch (direction) {
       	    		case'right':
-      	    			$(sections.sidebarLeft).addClass('slidRight');
+      	    			$(sections.sidebarRight).removeClass('show');
+      	    			$(sections.sidebarLeft).addClass('slidRight show');
       	    			$(sections.mainPage).addClass('slidRight');
       	    			$('.topBar .slideRight').addClass('pressed');
 
@@ -51,7 +56,8 @@
       	    		break;
 
       	    		case 'left':
-      	    			$(sections.sidebarRight).addClass('slidLeft');
+      	    			$(sections.sidebarLeft).removeClass('show');
+      	    			$(sections.sidebarRight).addClass('slidLeft show');
       	    			$(sections.mainPage).addClass('slidLeft');
       	    			$('.topBar .slideLeft').addClass('pressed');
 
@@ -59,17 +65,27 @@
       	    		break;
 
       	    		case 'shutLeft':
-      	    			$(sections.sidebarLeft).removeClass('slidRight');
-      	    			$(sections.mainPage).removeClass('slidRight');
       	    			$('.topBar .slideRight').removeClass('pressed');
+      	    			$(sections.mainPage).removeClass('slidRight');
+      	    			$(sections.sidebarLeft).removeClass('slidRight');
+      	    			
+      	    			var timeout = setTimeout(function() {
+      	    				$(sections.sidebarLeft).removeClass('show');
+      	    			}, 400);
+      	    			clearTimeout(timeout);
       	    
       	    			slidRight = 0;
       	    		break;
       	    		case 'shutRight':
+      	    			$('.topBar .slideLeft').removeClass('pressed');
+      	    			$(sections.mainPage).removeClass('slidLeft');
     					$(sections.sidebarRight).removeClass('slidLeft');
-    					$(sections.mainPage).removeClass('slidLeft');
-    					$('.topBar .slideLeft').removeClass('pressed');
-    		
+    					
+    					var timeout = setTimeout(function() {
+    						$(sections.sidebarRight).removeClass('show');
+    					}, 400);
+    					clearTimeout(timeout);
+
     					slidLeft = 0;
     				break;
       	    	}

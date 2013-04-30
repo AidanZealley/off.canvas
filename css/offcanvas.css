@@ -95,11 +95,11 @@ body {
   -o-transition-timing-function: ease-in-out; }
 
 .no-csstransforms3d .animatedSlide {
-  transition: position 0.4s ease-in-out;
-  -ms-transition: position 0.4s ease-in-out;
-  -moz-transition: position 0.4s ease-in-out;
-  -webkit-transition: position 0.4s ease-in-out;
-  -o-transition: position 0.4s ease-in-out; }
+  transition: left 0.4s ease-in-out, right 0.4s ease-in-out;
+  -ms-transition: left 0.4s ease-in-out, right 0.4s ease-in-out;
+  -moz-transition: left 0.4s ease-in-out, right 0.4s ease-in-out;
+  -webkit-transition: left 0.4s ease-in-out, right 0.4s ease-in-out;
+  -o-transition: left 0.4s ease-in-out, right 0.4s ease-in-out; }
 
 .floated {
   float: left;
@@ -125,6 +125,9 @@ body {
   left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch; }
+
+.sidebarLeft.show, .sidebarRight.show {
+  z-index: 200; }
 
 /* Sliding side bars */
 .sidebarLeft, .sidebarRight {
@@ -263,8 +266,7 @@ body {
   -ms-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  z-index: 200; }
+  -o-transform: translate3d(0, 0, 0); }
 
 .no-csstransforms3d .sidebarLeft.slidRight {
   left: 0; }

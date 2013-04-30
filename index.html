@@ -11,6 +11,7 @@
 		
 		<script src='js/modernizr.js'></script>
 		<script src='js/jquery.js'></script>
+		<script src='js/jquery.offcanvas.min.js'></script>
 		<script src='js/main.min.js'></script>
 		
 		<!-- If browser is internet explorer run HTML5 compatibility code -->		
@@ -19,11 +20,11 @@
 		<![endif]-->
 	</head>
 	<body>
-		<aside class='sidebarLeft'><!-- JS adds .scrolling -->
-			<div class='overthrow'><!-- JS adds .scrollableArea -->
+		<aside class='sidebarLeft'>
+			<div class='scrollableArea'>
 				<!-- Place whatever HTML you want in here -->
 				
-				<a class='shut' href=''>&#10006;</a>
+				<a class='shutLeft' href=''>&#10006;</a>
 				
 				<div class='you padded'>
 					<a href='http://aidanzealley.com/' target='_blank'><img class='avatar' src='pictures/aidan.jpg' alt='Aidan Zealley' width='50'/></a>
@@ -37,13 +38,13 @@
 			</div>
 		</aside>
 		
-		<section class='page'><!-- JS adds .scrolling -->
+		<section class='page'>
 			<header class='topBar'>
 				<a class='slideRight' href=''>&#9776;</a>
 				<a class='slideLeft' href=''>&#9776;</a>
 				<h1>Off.canvas</h1>
 			</header>
-			<div class='overthrow'><!-- JS adds .scrollableArea -->
+			<div class='scrollableArea'>
 				<!-- Place whatever HTML you want in here -->
 				
 				<div class='cover floated padded'>
@@ -87,11 +88,11 @@
 			</div>
 		</section>
 		
-		<aside class='sidebarRight'><!-- JS adds .scrolling -->
-			<div class='overthrow'><!-- JS adds .scrollableArea -->
+		<aside class='sidebarRight'>
+			<div class='scrollableArea'>
 				<!-- Place whatever HTML you want in here -->
 				
-				<a class='shut' href=''>&#10006;</a>
+				<a class='shutRight' href=''>&#10006;</a>
 				
 				<div class='you padded'>
 					<a href='http://aidanzealley.com/' target='_blank'><img class='avatar' src='pictures/aidan.jpg' alt='Aidan Zealley' width='50'/></a>
@@ -109,17 +110,14 @@
 		<script src='js/hammer.js'></script>
 		<script src='js/jquery.hammer.js'></script>
 		<script type="text/javascript">
-		
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-32925625-1']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32925625-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 		</script>
 	</body>
 </html>

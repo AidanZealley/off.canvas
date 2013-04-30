@@ -283,11 +283,11 @@ hr {
 			color: $lightGrey;
 			font-weight: 300;
 			text-shadow: 0 0.0625em 0.0625em rgba(0,0,0,0.4);
-		}
-		
-		a:hover {
-			color:#fff;
-			background:scale-lightness($darkGrey, 5%);
+			
+			&:hover, &.current {
+				color:#fff;
+				background:scale-lightness($darkGrey, 5%);
+			}
 		}
 	}
 	

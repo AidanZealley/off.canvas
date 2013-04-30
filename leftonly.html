@@ -14,9 +14,7 @@
 		<script src="js/jquery.offcanvas.min.js"></script>
 		<script>
 			jQuery(document).ready(function($) {
-				$('html').offcanvas({
-					hasSidebarRight: true
-				});
+				$('html').offcanvas();
 			});
 		</script>
 		
@@ -37,9 +35,9 @@
 					<h2><a href="http://aidanzealley.com/" target="_blank">Aidan Zealley</a></h2>
 				</div>
 				<ul class="paddedLight">
-					<li><a class='current' href="index.html"><span class="icon">&#8962;</span>Home</a></li>
+					<li><a href="index.html"><span class="icon">&#8962;</span>Home</a></li>
 					<li><a href="https://github.com/AidanZealley/off.canvas" target="_blank"><span class="social">&#62208;</span>GitHub Repository</a></li>
-					<li><a href="leftonly.html"><span class="icon">&#8624;</span>Left sidebar only</a></li>
+					<li><a class="current" href="leftonly.html"><span class="icon">&#8624;</span>Left sidebar only</a></li>
 					<li><a href="http://aidanzealley.com/"><span class="icon">&#59254;</span>aidanzealley.com</a></li>
 					<li><a href=""><span class="icon">&#59201;</span>Sign Out</a></li>
 				</ul>
@@ -49,7 +47,6 @@
 		<section class="page">
 			<header class="topBar">
 				<a class="slideRight" href="">&#9776;</a>
-				<a class="slideLeft" href="">&#9776;</a>
 				<h1>Off.canvas</h1>
 			</header>
 			<div class="scrollableArea">
@@ -58,7 +55,7 @@
 				<div class="cover floated padded">
 					<hgroup class="heading padded">
 						<h2>Presenting</h2>
-						<h1><span class="pacifico">Off.canvas</span> , for your web application</h1>
+						<h1><span class="pacifico">Off.canvas</span> , left sidebar version</h1>
 					</hgroup>
 				</div>
 				
@@ -95,26 +92,6 @@
 				</div>
 			</div>
 		</section>
-		
-		<aside class="sidebarRight">
-			<div class="scrollableArea">
-				<!-- Place whatever HTML you want in here -->
-				
-				<a class="shutRight" href="">&#10006;</a>
-				
-				<div class="you padded">
-					<a href="http://aidanzealley.com/" target="_blank"><img class="avatar" src="pictures/aidan.jpg" alt="Aidan Zealley" width="50"/></a>
-					<h2><a href="http://aidanzealley.com/" target="_blank">Aidan Zealley</a></h2>
-				</div>
-				<ul class="paddedLight">
-					<li><a class='current' href="index.html"><span class="icon">&#8962;</span>Home</a></li>
-					<li><a href="https://github.com/AidanZealley/off.canvas" target="_blank"><span class="social">&#62208;</span>GitHub Repository</a></li>
-					<li><a href="leftonly.html"><span class="icon">&#8624;</span>Left sidebar only</a></li>
-					<li><a href="http://aidanzealley.com/"><span class="icon">&#59254;</span>aidanzealley.com</a></li>
-					<li><a href=""><span class="icon">&#59201;</span>Sign Out</a></li>
-				</ul>
-			</div>
-		</aside>
 
 		<script src="js/overthrow.js"></script>
 		<script src="js/hammer.js"></script>

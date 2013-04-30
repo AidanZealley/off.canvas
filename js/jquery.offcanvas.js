@@ -74,42 +74,48 @@
     				break;
       	    	}
       	    }
-
-      	    $('.slideRight').click(function() {
-      	    	if (!slidRight) {
-      	    		slide('right');
-      	    	} else {
-      	    		slide('shutLeft');
-      	    	}
-
-      	    	return false;
-      	    });
-
-      	    $('.slideLeft').click(function() {
-      	    	if (!slidLeft) {
-      	    		slide('left');
-      	    	} else {
-      	    		slide('shutRight');
-      	    	}
-
-      	    	return false;
-      	    });
-
-      	    $('.shutLeft').click(function() {
-      	    	slide('shutLeft');
-
-      	    	return false;
-      	    });
-      	    $('.shutRight').click(function() {
-      	    	slide('shutRight');
-
-      	    	return false;
-      	    });
+			
+			if (settings.hasSidebarLeft) {
+	      	    $('.slideRight').click(function() {
+	      	    	if (!slidRight) {
+	      	    		slide('right');
+	      	    	} else {
+	      	    		slide('shutLeft');
+	      	    	}
+	
+	      	    	return false;
+	      	    });
+      	    }
+			if (settings.hasSidebarRight) {
+	      	    $('.slideLeft').click(function() {
+	      	    	if (!slidLeft) {
+	      	    		slide('left');
+	      	    	} else {
+	      	    		slide('shutRight');
+	      	    	}
+	
+	      	    	return false;
+	      	    });
+      	    }
+			if (settings.hasSidebarLeft) {
+	      	    $('.shutLeft').click(function() {
+	      	    	slide('shutLeft');
+	
+	      	    	return false;
+	      	    });
+      	    }
+      	    if (settings.hasSidebarRight) {
+	      	    $('.shutRight').click(function() {
+	      	    	slide('shutRight');
+	
+	      	    	return false;
+	      	    });
+      	    }
 			
 			if (settings.enableKeys) {
 	      	    $(document).keydown(function(e) {
 	      	    	if (e.keyCode === 39) {
-	      	    		if (!slidRight && !slidLeft) {
+	      	    		if (!slidRight && !slidLeft && settings.hasSidebarLeft) {
 	      	    			slide('right');
 	      	    		} else {
 	      	    			slide('shutRight');
@@ -119,7 +125,7 @@
 	      	    	}
 	
 	      	    	if (e.keyCode === 37) {
-	      	    		if (!slidRight && !slidLeft) {
+	      	    		if (!slidRight && !slidLeft && settings.hasSidebarRight) {
 	      	    			slide('left');
 	      	    		} else {
 	      	    			slide('shutLeft');
@@ -133,7 +139,7 @@
 			if (settings.enableTouch) {
 	      	    $(this).hammer({drag:false, prevent_default:false, css_hacks:false}).on('swipe', function (event) {
 	      	    	if (event.direction === 'right') {
-	      	    		if (!slidRight && !slidLeft) {
+	      	    		if (!slidRight && !slidLeft && settings.hasSidebarLeft) {
 	      	    			slide('right');
 	      	    		} else {
 	      	    			slide('shutRight');
@@ -141,7 +147,7 @@
 	
 	      	    		return false;
 	      	    	} else if (event.direction === 'left') {
-	      	    		if (!slidRight && !slidLeft) {
+	      	    		if (!slidRight && !slidLeft && settings.hasSidebarRight) {
 	      	    			slide('left');
 	      	    		} else {
 	      	    			slide('shutLeft');

@@ -14,9 +14,11 @@
 
         // Default element names
         var sections = $.extend({
-            sidebarLeft    	: '.sidebarLeft',
-            sidebarRight   	: '.sidebarRight',
-            mainPage  		: '.page'
+            sidebarLeft    	: '#sidebarLeft',
+            sidebarRight   	: '#sidebarRight',
+            mainPage  		: '#page',
+            leftBurger		: '#leftBurger',
+            rightBurger		: '#rightBurger'
         }, options);
 
         return this.each( function() {
@@ -48,42 +50,43 @@
       	    	switch (direction) {
       	    		case'right':
       	    			$(sections.sidebarRight).removeClass('show');
-      	    			$(sections.sidebarLeft).addClass('slidRight show');
       	    			$(sections.mainPage).addClass('slidRight');
-      	    			$('.topBar .slideRight').addClass('pressed');
+      	    			$(sections.sidebarLeft).addClass('slidRight show');
+      	    			$(sections.leftBurger).addClass('pressed');
 
       	    			slidRight = 1;
       	    		break;
 
       	    		case 'left':
       	    			$(sections.sidebarLeft).removeClass('show');
-      	    			$(sections.sidebarRight).addClass('slidLeft show');
       	    			$(sections.mainPage).addClass('slidLeft');
-      	    			$('.topBar .slideLeft').addClass('pressed');
+      	    			$(sections.sidebarRight).addClass('slidLeft show');
+      	    			$(sections.rightBurger).addClass('pressed');
 
       	    			slidLeft = 1;
       	    		break;
 
       	    		case 'shutLeft':
-      	    			$('.topBar .slideRight').removeClass('pressed');
+      	    			$(sections.leftBurger).removeClass('pressed');
       	    			$(sections.mainPage).removeClass('slidRight');
       	    			$(sections.sidebarLeft).removeClass('slidRight');
       	    			
       	    			var timeout = setTimeout(function() {
       	    				$(sections.sidebarLeft).removeClass('show');
-      	    			}, 400);
+      	    			}, 300);
       	    			clearTimeout(timeout);
       	    
       	    			slidRight = 0;
       	    		break;
+      	    		
       	    		case 'shutRight':
-      	    			$('.topBar .slideLeft').removeClass('pressed');
+      	    			$(sections.rightBurger).removeClass('pressed');
       	    			$(sections.mainPage).removeClass('slidLeft');
-    					$(sections.sidebarRight).removeClass('slidLeft');
+      	    			$(sections.sidebarRight).removeClass('slidLeft');
     					
     					var timeout = setTimeout(function() {
     						$(sections.sidebarRight).removeClass('show');
-    					}, 400);
+    					}, 300);
     					clearTimeout(timeout);
 
     					slidLeft = 0;
@@ -92,7 +95,7 @@
       	    }
 			
 			if (settings.hasSidebarLeft) {
-	      	    $('.slideRight').click(function() {
+	      	    $('.slideRight').on('click', function(event) {
 	      	    	if (!slidRight) {
 	      	    		slide('right');
 	      	    	} else {
@@ -103,7 +106,7 @@
 	      	    });
       	    }
 			if (settings.hasSidebarRight) {
-	      	    $('.slideLeft').click(function() {
+	      	    $('.slideLeft').on('click', function(event) {
 	      	    	if (!slidLeft) {
 	      	    		slide('left');
 	      	    	} else {
@@ -114,14 +117,14 @@
 	      	    });
       	    }
 			if (settings.hasSidebarLeft) {
-	      	    $('.shutLeft').click(function() {
+	      	    $('.shutLeft').on('click', function(event) {
 	      	    	slide('shutLeft');
 	
 	      	    	return false;
 	      	    });
       	    }
       	    if (settings.hasSidebarRight) {
-	      	    $('.shutRight').click(function() {
+	      	    $('.shutRight').on('click', function(event) {
 	      	    	slide('shutRight');
 	
 	      	    	return false;
@@ -129,7 +132,7 @@
       	    }
 			
 			if (settings.enableKeys) {
-	      	    $(document).keydown(function(e) {
+	      	    $(this).keydown(function(e) {
 	      	    	if (e.keyCode === 39) {
 	      	    		if (!slidRight && !slidLeft && settings.hasSidebarLeft) {
 	      	    			slide('right');

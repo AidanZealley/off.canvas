@@ -51,31 +51,31 @@ body {
 
 .animatedSlide {
 	transition-property: transform;  
-	transition-duration: 0.4s;  
+	transition-duration: 0.3s;  
 	transition-timing-function: ease-in-out;
 	
 	-ms-transition-property: -ms-transform;  
-	-ms-transition-duration: 0.4s;  
+	-ms-transition-duration: 0.3s;  
 	-ms-transition-timing-function: ease-in-out;
 	
 	-moz-transition-property: -moz-transform;  
-	-moz-transition-duration: 0.4s;  
+	-moz-transition-duration: 0.3s;  
 	-moz-transition-timing-function: ease-in-out;
 	
 	-webkit-transition-property: -webkit-transform;  
-	-webkit-transition-duration: 0.4s;  
+	-webkit-transition-duration: 0.3s;  
 	-webkit-transition-timing-function: ease-in-out;
 	
 	-o-transition-property: -o-transform;  
-	-o-transition-duration: 0.4s;  
+	-o-transition-duration: 0.3s;  
 	-o-transition-timing-function: ease-in-out;
 }
 .no-csstransforms3d .animatedSlide {
-	transition: left 0.4s ease-in-out, right 0.4s ease-in-out;  
-	-ms-transition: left 0.4s ease-in-out, right 0.4s ease-in-out;   
-	-moz-transition: left 0.4s ease-in-out, right 0.4s ease-in-out;
-	-webkit-transition: left 0.4s ease-in-out, right 0.4s ease-in-out; 
-	-o-transition: left 0.4s ease-in-out, right 0.4s ease-in-out; 
+	transition: left 0.3s ease-in-out, right 0.3s ease-in-out;  
+	-ms-transition: left 0.3s ease-in-out, right 0.3s ease-in-out;   
+	-moz-transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+	-webkit-transition: left 0.3s ease-in-out, right 0.3s ease-in-out; 
+	-o-transition: left 0.3s ease-in-out, right 0.3s ease-in-out; 
 }
 
 .floated {

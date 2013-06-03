@@ -194,6 +194,16 @@ hr {
 	border-bottom: 2px dashed scale-lightness($orange, 90%);
 }
 
+code {
+	display: block;
+	margin: 2em 0;
+	padding: 1em;
+	@include box-sizing(border-box);
+	font-family: courier new;
+	background: scale-lightness($lightGrey, 50%);
+	border-radius: 0.25em;
+}
+
 .icon {
     font-family:Entypo;
     font-style:normal;
@@ -241,10 +251,6 @@ hr {
 	float: left;
 	width: 100%;
 	text-align: center;
-}
-
-.white {
-	background: #fff;
 }
 
 .fat {

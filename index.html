@@ -5,8 +5,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		
+		<meta name="description" content="HTML, CSS and jQuery plugin to create an off canvas layout for web apps or websites" />
+		<meta name="keywords" content="off canvas, offcanvas, app, webapp, web app" />
+		
 		<link rel="stylesheet" href="css/offcanvas.css" />
-		<link rel="stylesheet" href="css/skin.css" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		
 		<script src="js/modernizr.js"></script>
@@ -63,11 +65,42 @@
 					</hgroup>
 				</div>
 				
-				<div class="floated white padded">
+				<div class="floated padded">
 					<div class="thin">
 						<h1 class="center">What the funk is it?!</h1>
-						<p>It"s an HTML, CSS and Javascript framework to kick off your web applications with the 'Off Canvas' style sidebar we know and love from native mobile apps.</p>
+						<p>It's an HTML, CSS and jQuery plugin to kick off your web applications with the 'Off Canvas' style sidebar we know and love from native mobile apps.</p>
 						<hr/>
+						
+						<h1 class="center">How do I use it?!</h1>
+						<p>The Off.canvas jQuery plugin operates on the html tag of your page so in its most basic form you include jQuery and the Off.canvas plugin and CSS files and then run it with:</p>
+						<pre><code>
+$('html').offcanvas();
+						</code></pre>
+						<p>This will create an off canvas layout with the default settings providing you supply the following html structure:</p>
+						
+<pre><code>&lt;aside id=&quot;sidebarLeft&quot; class=&quot;sidebarLeft&quot;&gt;
+
+  &lt;div class=&quot;scrollableArea&quot;&gt;
+    &lt;!-- Place whatever HTML you want in here --&gt;
+  &lt;/div&gt;
+  
+&lt;/aside&gt;
+
+&lt;section id=&quot;page&quot; class=&quot;page&quot;&gt;
+
+  &lt;header class=&quot;topBar&quot;&gt;
+    &lt;a id=&quot;leftBurger&quot; class=&quot;slideRight&quot; href=&quot;&quot;&gt;&amp;#9776;&lt;/a&gt;
+  &lt;/header&gt;
+  
+  &lt;div class=&quot;scrollableArea&quot;&gt;
+    &lt;!-- Place whatever HTML you want in here --&gt;
+  &lt;/div&gt;
+  
+&lt;/section&gt;</code></pre>
+						<p>The scrollableArea divs are there to make the content scrollable as the overflow of the page is hidden to allow the off canvas effect to work. I chose not to make the side bar or main page scrollable directly so as to allow for more flexible layout options, such as adding a fixed position top bar like on this page.</p>
+						<p>The jQuery targets the ids of the side bar and main page, whilst the class names are used by the CSS.</p>
+						<hr/>
+						
 						<h3>Still Confused? Try these things...</h3>
 						<ul class="demo">
 							<li>

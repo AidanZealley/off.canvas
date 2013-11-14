@@ -5,6 +5,8 @@ Off canvas style HTML, CSS and JavaScript framework
 
 Without JavaScript it falls back to a three column layout
 
+*Currently working on a new version that addresses some bugs but progress will be slow due to other projects*
+
 
 Demo:
 =====

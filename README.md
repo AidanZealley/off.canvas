@@ -18,5 +18,4 @@ Basic off canvas style shell with left and right sidebars.
 Issues:
 =======
 - [ ] Bugs left to squish in IE10
-- [ ] Overlapping sidebars on smaller screens
 - [ ] Some javascript execution speed issues on mobile devices
